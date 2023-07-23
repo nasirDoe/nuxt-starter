@@ -3,13 +3,14 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
-    // '@nuxtjs/eslint-module',
     '@hebilicious/vue-query-nuxt',
     '@unocss/nuxt',
     'nuxt-api-party',
+    'nuxt-typed-router',
+    '@pinia/nuxt',
+    '@vee-validate/nuxt',
   ],
   extends: ['nuxt-seo-kit'],
-
   apiParty: {
     endpoints: {
       px: {
@@ -26,6 +27,9 @@ export default defineNuxtConfig({
         },
       },
     },
+  },
+  pinia: {
+    autoImports: ['defineStore'],
   },
   runtimeConfig: {
     public: {
