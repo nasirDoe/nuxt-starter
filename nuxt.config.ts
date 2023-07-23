@@ -8,6 +8,8 @@ export default defineNuxtConfig({
     '@unocss/nuxt',
     'nuxt-api-party',
   ],
+  extends: ['nuxt-seo-kit'],
+
   apiParty: {
     endpoints: {
       px: {
@@ -28,6 +30,10 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       apiUrl: '',
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://example.com',
+      siteName: 'Awesome Site',
+      siteDescription: 'Welcome to my awesome site!',
+      language: 'en', // prefer more explicit language codes like `en-AU` over `en`
     },
   },
 })
