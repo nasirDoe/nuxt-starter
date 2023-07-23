@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import type { NewDetailResponse } from '~/types'
 
-const route = useRoute()
-const { pending, data } = usePxData<NewDetailResponse>(`/post/${route.params.slug}`, {
+const slug = useRouteParam<string>('slug')
+
+const { pending, data } = usePxData<NewDetailResponse>(`/post/${slug.value}`, {
   cache: false,
 })
 </script>
@@ -16,7 +17,7 @@ const { pending, data } = usePxData<NewDetailResponse>(`/post/${route.params.slu
       <h1 text="3xl amber">
         {{ data.data.title }}
       </h1>
-      <div v-html=" data.data.content " />
+      <div v-html="data.data.content " />
     </template>
   </div>
 </template>
