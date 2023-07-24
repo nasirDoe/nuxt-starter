@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     'nuxt-typed-router',
     '@pinia/nuxt',
     '@vee-validate/nuxt',
+    '@vueuse/nuxt',
   ],
   extends: ['nuxt-seo-kit'],
   apiParty: {
